@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-       
+
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +21,14 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Equals("") || textBox2.Text.Equals(""))
+            {
+                MessageBox.Show("Kads no laukiem atstats tuksh");
+
+            }
+            else
+            {
+
             double skaitlis1 = double.Parse(textBox1.Text);
             double skaitlis2 = double.Parse(textBox2.Text);
             double rezultats = (skaitlis1 / 100) * skaitlis2;
@@ -30,7 +38,7 @@ namespace WindowsFormsApp1
         
             LogToFile.LogWrite($"Veikta aprekinasana: {skaitlis1} procenti no {skaitlis2} ir = {rezultats}!");
         }
-        
+        }
         private void textBox1_MouseClick_1(object sender, MouseEventArgs e)
         {
             ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
